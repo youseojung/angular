@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header [title]="headerTitle"></app-header>
+~~~
+<div>
+    <button mat-button [matMenuTriggerFor] = "menu">Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/">HOME</button>
+        <button mat-menu-item routerLink="/direct">direct</button>
+        <button mat-menu-item routerLink="/event">event</button>
+        <button mat-menu-item routerLink="/input">input</button>
+        <button mat-menu-item routerLink="/user">user</button>
+        <button mat-menu-item routerLink="/error1">error1</button>
+    </mat-menu>
+    </div>
+    <div class='container'>
+        <router-outlet></router-outlet>
+    </div>
+
+    <!--
+input
+user
+    -->
+    <!--
+<app-event [subStr]="title"></app-event>
+{{title}}~~~
+<app-direct></app-direct>
+
+<p>                         이부분들은 자식태그들 input 이랑 맞아야함</p>-->
+<app-footer [footContent]="footerContent"></app-footer>

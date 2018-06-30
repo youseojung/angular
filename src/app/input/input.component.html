@@ -1,0 +1,57 @@
+<button (click)="clickBtn(1)"> 클릭해봐 </button>
+<button (click)="clickBtn(-1)"> 감소해봐 </button>
+
+<div > 클릭 회수 : {{clickCnt}} </div>
+
+<input (keyup)="upkey($event)">
+<div>
+    1.쓴글 : {{str}}
+</div>
+
+<input #test (keyup)="upkey2(test.value)">
+<div>
+    2.쓴글 : {{str2}}
+</div>
+
+<br>
+<br>
+계산기 
+<input #add1> + <input #add2>
+<button (click)="clickCaculate(add1.value,add2.value)"> 계산하기 </button>
+<div>
+ 결과 :  {{result}}
+
+ <select (change) = "checkValue($event)">
+    <option value="test1">test1</option>
+    <option value="test2">test2</option>
+    <option value="test3">test3</option>
+ </select>
+
+ <select #checkbx (change) = "checkValue1(checkbx.value)">
+        <option value="1">test1</option>
+        <option value="2">test2</option>
+        <option value="3">test3</option>
+     </select>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p> div 얎 </p>>
+     <div *ngIf="checkbx.value=='test1'">test1</div>
+     <div *ngIf="checkbx.value=='test2'">test2</div>
+     <div *ngIf="checkbx.value=='test3'">test3</div>
+     <br>
+     <br>
+     <br>
+     <select #sel (change) = "fnview(checkbx.sel)">
+            <option value="1">test1</option>
+            <option value="2">test2</option>
+            <option value="3">test3</option>
+         </select>
+
+      <div>test1</div>
+     <div *ngIf="sel.value=='2'||sel.value=='3'">test2</div>
+     <div *ngIf="sel.value=='3'">test3</div>
+
+</div>

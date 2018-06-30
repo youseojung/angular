@@ -1,0 +1,56 @@
+<ul>
+    <li *ngFor='let animal of animalList'>
+      <!-- 지시자로 자동으로 돌려줌 -->
+      name : {{animal.name}} , age {{animal.age}}
+    </li>
+  </ul>
+
+
+  <ul>
+      <li *ngFor='let animal of animalList;index as idx'>
+        <!-- 지시자로 자동으로 돌려줌 -->
+        {{idx}} . name : {{animal.name}} , age {{animal.age}}
+      </li>
+    </ul>
+
+    
+ <!-- 짝수만나타내기 -->
+ <ul>
+    <ng-container *ngFor='let animal of animalList;even as isEven'>
+      <li *ngIf="isEven">name : {{animal.name}} , age {{animal.age}} </li>
+    </ng-container>
+  </ul>
+
+      
+ <!-- 홀수만나타내기 -->
+ <ul>
+    <ng-container *ngFor='let animal of animalList;odd as isOdd'>
+      <li *ngIf="isOdd">name : {{animal.name}} , age {{animal.age}} </li>
+    </ng-container>
+  </ul>
+
+  <!-- 첫번째만나타내기 -->
+ <ul>
+    <ng-container *ngFor='let animal of animalList;first as first'>
+      <li *ngIf="first">name : {{animal.name}} , age {{animal.age}} </li>
+    </ng-container>
+
+      <!-- 마지막만나타내기 -->
+    <ng-container *ngFor='let animal of animalList;last as last'>
+        <li *ngIf="last">name : {{animal.name}} , age {{animal.age}} </li>
+      </ng-container>
+
+   <p>조건ㅁ누 추가</p>>
+    <!-- 조건문 추가 -->
+    <ng-container *ngFor='let animal of animalList'>
+        <li *ngIf="animal.name =='소'||animal.age==10"> name : {{animal.name}} , age {{animal.age}} </li>
+    </ng-container>
+        
+    
+        
+
+  </ul>
+
+
+      
+  
