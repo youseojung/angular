@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-app.use(express.static(__dirname + '../ang-boot-app'));
+app.use(express.static(__dirname + '/dist/ang-boot-app'));
 
 
 app.get('/*', function(req,res,next){
     console.log(req.method);
-    res.sendFile(path.join(__dirname + '../ang-boot-app/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/ang-boot-app/index.html'));
     next();
 });
 
