@@ -1,4 +1,48 @@
 
     <p> user works!</p> 
+<!-- 
+   <button (click)="viewUserList()"> 유저리스트 </button>
 
    
+   <button (click)="viewCompanyList()"> 회사리스트 </button>
+
+   <ul>
+       <ng-container *ngFor="let user of userList">
+           <li>이름 : {{user.name}}, 나이 {{user.age}}</li>
+       </ng-container>
+
+       <ng-container *ngFor="let company of companyList">
+            <li>이름 : {{company.name}}, 나이 {{company.empcount}}</li>
+        </ng-container>
+   </ul>
+-->
+<div [hidden]="isLogin">
+아이디: <input [(ngModel)]="id">
+비밀번호: <input [(ngModel)]="pwd">
+<button (click)="login()">로그인</button>
+</div>
+
+<div [hidden]="!isLogin">
+        <button (click)="logout()">로그아웃</button>
+ </div>
+
+
+<div class = "container" [hidden]="!isLogin">
+   이름 : <input [(ngModel)]="user.name">
+
+   나이 : <input [(ngModel)]="user.age">
+   
+   비고 : <input [(ngModel)]="user.etc">
+   <button (click)="insertUser()">유져 추가</button>
+   <button (click)="viewUserList()">유져 리스트</button>
+   <select (change)="chSelect($event)">
+       <option value="user">유져리스트</option>
+       <option value="animal">동물리스트</option>
+       <option value="computer">컴터리스트</option>
+   </select>
+   <ul>
+       <ng-container *ngFor="let user of userList">
+           <li>이름 : {{user.name}}, 나이:{{user.age}}</li>
+       </ng-container>
+   </ul>
+</div>

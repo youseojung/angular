@@ -1,0 +1,11 @@
+<p>
+  company works!
+</p>
+<button (click)="companyListView()">회사 리스트 가져오기 </button>
+<ul>
+  <li *ngFor="let comp of companyList">
+    회사명 :{{comp.name}}
+    회사창립년도  :{{comp.year}}
+    회사주소  :{{comp.address}}
+  </li>
+</ul>
